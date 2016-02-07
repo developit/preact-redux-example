@@ -8,9 +8,6 @@ import * as actions from './actions';
 
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
-	shouldComponentUpdate(props, state) {
-		console.log(state.text, this.state.text);
-	}
 	@bind
 	addTodos() {
 		let { text } = this.state;
@@ -18,12 +15,11 @@ export default class App extends Component {
 		this.props.addTodo(text);
 		return false;
 	}
-	render({ todos }, { text={} }) {
-		console.log(this.state);
+	render({ todos }, { text }) {
 		return (
 			<div>
 				<form onSubmit={this.addTodos} action="javascript:">
-					<input value={text.two} onInput={this.linkState('text.two')} />
+					<input value={text} onInput={this.linkState('text')} />
 				</form>
 				<ul>
 					{ todos.map( item => (
