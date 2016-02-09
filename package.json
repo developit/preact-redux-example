@@ -1,7 +1,7 @@
 {
   "name": "preact-boilerplate",
-  "version": "1.0.3",
-  "description": "Ready-to-go Preact starter project powered by webpack.",
+  "version": "0.1.0",
+  "description": "Ready-to-go Preact + Redux starter project powered by webpack.",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --inline --progress",
     "start": "superstatic build -p ${PORT:-8080} --gzip -c '{\"routes\":{\"**\":\"index.html\"},\"cache_control\":{\"**\":86400}}'",
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "preact",
-    "boilerplate",
-    "webpack"
+    "redux"
   ],
   "license": "MIT",
   "author": "Jason Miller <jason@developit.ca>",
