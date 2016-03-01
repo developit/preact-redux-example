@@ -1,6 +1,9 @@
 # Preact Redux Example
 
-A modified version of [preact-boilerplate](https://github.com/developit/preact-boilerplate) that incorporates Redux.
+A Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
+
+
+<img src="https://i.gyazo.com/d655af6fc8768487897b13eb31500aa7.gif" width="207" />
 
 
 ---
@@ -18,7 +21,7 @@ A modified version of [preact-boilerplate](https://github.com/developit/preact-b
 **1. Clone this repo:**
 
 ```sh
-git clone --depth 1 https://github.com/developit/preact-boilerplate.git my-app
+git clone --depth 1 https://github.com/developit/preact-redux-example.git my-app
 cd my-app
 ```
 
