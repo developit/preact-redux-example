@@ -1,11 +1,9 @@
-@import 'helpers';
-
 html, body {
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background: #FAFAFA;
+	background: #767A7F;
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
 	color: #444;
@@ -18,5 +16,58 @@ html, body {
 }
 
 #app {
-	height: 100%;
+	margin: 5px auto;
+	max-width: 400px;
+	background: #FAFAFA;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 3px 9px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+
+form {
+	background: #EEE;
+	padding: 10px;
+	border-bottom: 1px solid #DDD;
+
+	input {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 10px;
+		background: #FFF;
+		border: 1px solid #DDD;
+		border-radius: 5px;
+		font-size: 130%;
+		outline: none;
+
+		&:focus {
+			border-color: #BBB;
+		}
+	}
+}
+
+ul {
+	min-height: 100px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		padding: 10px;
+		background: #FFF;
+		border-bottom: 1px solid #EEE;
+
+		&:nth-child(2n) {
+			background: #EEF6FF;
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+
+		button {
+			margin: 0 10px 0 0;
+			opacity: 0.5;
+		}
+	}
 }
