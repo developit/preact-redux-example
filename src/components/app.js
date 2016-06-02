@@ -1,5 +1,4 @@
 import { h, Component } from 'preact';
-import { bind } from 'decko';
 import { connect } from 'preact-redux';
 import { bindActions } from '../util';
 import reduce from '../reducers';
@@ -9,18 +8,16 @@ import TodoItem from './todo-item';
 
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
-	@bind
-	addTodos() {
+	addTodos = () => {
 		let { text } = this.state;
 		this.setState({ text:'' });
 		this.props.addTodo(text);
 		return false;
-	}
+	};
 
-	@bind
-	removeTodo(todo) {
+	removeTodo = (todo) => {
 		this.props.removeTodo(todo);
-	}
+	};
 
 	render({ todos }, { text }) {
 		return (
