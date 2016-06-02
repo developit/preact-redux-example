@@ -1,9 +1,12 @@
 # Preact Redux Example
 
-A Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
+A **10kb** Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
 
 
 <img src="https://i.gyazo.com/d655af6fc8768487897b13eb31500aa7.gif" width="207" />
+
+
+> As of `v2`, now wonderfully simplified via [preact-redux](https://github.com/developit/preact-redux) (no more preact-compat!).
 
 
 ---
@@ -96,5 +99,5 @@ class Link extends Component {
 MIT
 
 
-[Preact]: https://developit.github.io/preact
+[Preact]: https://github.com/developit/preact
 [webpack]: https://webpack.github.io
