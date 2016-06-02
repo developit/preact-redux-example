@@ -15,18 +15,7 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['', '.jsx', '.js', '.json', '.less'],
-		modulesDirectories: [
-			`${__dirname}/src/lib`,
-			`${__dirname}/node_modules`,
-			'node_modules'
-		],
-		alias: {
-			components: `${__dirname}/src/components`,		// used for tests
-			style: `${__dirname}/src/style`,
-			'react': 'preact-compat',
-			'react-dom': 'preact-compat'
-		}
+		extensions: ['', '.jsx', '.js', '.json', '.less']
 	},
 
 	module: {
@@ -69,18 +58,13 @@ module.exports = {
 	plugins: ([
 		new webpack.NoErrorsPlugin(),
 		new ExtractTextPlugin('style.css', { allChunks: true }),
-		new webpack.optimize.DedupePlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new HtmlWebpackPlugin()
 	]).concat(ENV==='production' ? [
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			mangle: true,
-			compress: true,
-			comments: false
-		})
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.OccurenceOrderPlugin()
 	] : []),
 
 	stats: { colors: true },
