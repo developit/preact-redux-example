@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "preact": "^4.8.0",
-    "preact-redux": "^1.0.0",
+    "preact-redux": "^1.0.1",
     "redux": "^3.5.2"
   }
 }
