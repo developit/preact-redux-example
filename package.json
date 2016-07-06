@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Ready-to-go Preact + Redux starter project, powered by webpack.",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --inline --hot --progress",
-    "start": "superstatic build -p ${PORT:-8080} --host 0.0.0.0 --gzip -c '{\"rewrites\": [{\"source\":\"**\",\"destination\":\"index.html\"}],\"headers\":[{\"source\":\"**\",\"headers\":[{\"key\":\"Cache-Control\",\"value\":\"max-age=86400\"}]}]}'",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
+    "start": "superstatic build -p 8080 --host 0.0.0.0 --gzip -c '{\"rewrites\": [{\"source\":\"**\",\"destination\":\"index.html\"}],\"headers\":[{\"source\":\"**\",\"headers\":[{\"key\":\"Cache-Control\",\"value\":\"max-age=86400\"}]}]}'",
     "prestart": "npm run build",
-    "build": "NODE_ENV=production webpack -p --progress",
-    "prebuild": "mkdir -p build",
+    "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "prebuild": "mkdirp build",
     "test": "eslint src tests/**/*.js"
   },
   "keywords": [
@@ -31,6 +31,7 @@
     "babel-runtime": "^6.9.2",
     "chai": "^3.5.0",
     "core-js": "^2.4.0",
+    "cross-env": "^1.0.8",
     "css-loader": "^0.23.1",
     "eslint": "^2.11.1",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -39,6 +40,7 @@
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "mkdirp": "^0.5.1",
     "postcss-loader": "^0.9.1",
     "raw-loader": "^0.5.1",
     "source-map-loader": "^0.1.5",
