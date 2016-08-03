@@ -24,7 +24,7 @@ A **10kb** Redux-powered alternative to [preact-boilerplate](https://github.com/
 **1. Clone this repo:**
 
 ```sh
-git clone --depth 1 https://github.com/developit/preact-redux-example.git my-app
+git clone https://github.com/developit/preact-redux-example.git my-app
 cd my-app
 ```
 
