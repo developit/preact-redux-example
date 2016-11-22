@@ -62,14 +62,14 @@ module.exports = {
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new HtmlWebpackPlugin()
-	]).concat(ENV==='production' ? [
+	]).concat(ENV === 'production' ? [
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurenceOrderPlugin()
 	] : []),
 
 	stats: { colors: true },
 
-	devtool: ENV==='production' ? 'source-map' : 'inline-source-map',
+	devtool: ENV === 'production' ? 'source-map' : 'inline-source-map',
 
 	devServer: {
 		port: process.env.PORT || 8080,

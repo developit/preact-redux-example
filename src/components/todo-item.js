@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 
 export default class TodoItem extends Component {
 	shouldComponentUpdate({ todo, onRemove }) {
-		return todo!==this.props.todo || onRemove!==this.props.onRemove;
+		return todo !== this.props.todo || onRemove !== this.props.onRemove;
 	}
 
 	remove = () => {
