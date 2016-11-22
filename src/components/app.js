@@ -5,12 +5,11 @@ import reduce from '../reducers';
 import * as actions from '../actions';
 import TodoItem from './todo-item';
 
-
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
 	addTodos = () => {
 		let { text } = this.state;
-		this.setState({ text:'' });
+		this.setState({ text: '' });
 		this.props.addTodo(text);
 		return false;
 	};
@@ -26,7 +25,7 @@ export default class App extends Component {
 					<input value={text} onInput={this.linkState('text')} placeholder="New ToDo..." />
 				</form>
 				<ul>
-					{ todos.map( todo => (
+					{ todos.map(todo => (
 						<TodoItem key={todo.id} todo={todo} onRemove={this.removeTodo} />
 					)) }
 				</ul>
