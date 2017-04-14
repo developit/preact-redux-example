@@ -8,8 +8,9 @@ import TodoItem from './todo-item';
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
 	addTodos = () => {
-		this.props.addTodo(this.input.value);
-		this.input.value = '';
+		const { text } = this.state;
+		this.setState({ text: '' });
+		this.props.addTodo(text);
 		return false;
 	};
 
@@ -17,11 +18,15 @@ export default class App extends Component {
 		this.props.removeTodo(todo);
 	};
 
+	updateText = (e) => {
+		this.setState({ text: e.target.value });
+	};
+
 	render({ todos }, { text }) {
 		return (
 			<div id="app">
 				<form onSubmit={this.addTodos} action="javascript:">
-					<input value={text} ref={(input) => { this.input = input; }} placeholder="New ToDo..." />
+					<input value={text} onInput={this.updateText} placeholder="New ToDo..." />
 				</form>
 				<ul>
 					{ todos.map(todo => (
