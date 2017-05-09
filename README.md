@@ -1,5 +1,7 @@
 # Preact Redux Example
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/developit/preact-redux-example.svg)](https://greenkeeper.io/)
+
 A **10kb** Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
 
 
