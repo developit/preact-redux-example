@@ -1,6 +1,6 @@
 # Preact Redux Example
 
-A **10kb** Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
+A **9kb** Redux-powered alternative to [preact-boilerplate](https://github.com/developit/preact-boilerplate), implementing a To-Do List app.
 
 
 <img src="https://i.gyazo.com/d655af6fc8768487897b13eb31500aa7.gif" width="207" />
