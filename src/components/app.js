@@ -1,31 +1,23 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 import { bindActions } from '../util';
-import reduce from '../reducers';
+import store from '../reducers';
 import * as actions from '../actions';
 import TodoItem from './todo-item';
 
-@connect(reduce, bindActions(actions))
+@connect(store, bindActions(actions))
 export default class App extends Component {
-	addTodos = () => {
-		const { text } = this.state;
-		this.setState({ text: '' });
-		this.props.addTodo(text);
-		return false;
-	};
 
-	removeTodo = (todo) => {
-		this.props.removeTodo(todo);
-	};
+	addTodo = () => this.props.text && this.props.addTodo();
 
-	updateText = (e) => {
-		this.setState({ text: e.target.value });
-	};
+	removeTodo = (todo) => this.props.removeTodo(todo);
 
-	render({ todos }, { text }) {
+	updateText = (e) => this.props.updateText(e);
+
+	render({ todos, text }) {
 		return (
 			<div id="app">
-				<form onSubmit={this.addTodos} action="javascript:">
+				<form onSubmit={this.addTodo} action="javascript:">
 					<input value={text} onInput={this.updateText} placeholder="New ToDo..." />
 				</form>
 				<ul>
