@@ -1,14 +1,16 @@
 {
   "name": "preact-redux-example",
   "version": "1.0.0",
-  "description": "Ready-to-go Preact + Redux starter project, powered by webpack.",
+  "description": "Ready-to-go Preact + Redux starter project, powered by Preact CLI.",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
-    "start": "superstatic build -p 8080 --host 0.0.0.0 --gzip -c '{\"rewrites\": [{\"source\":\"**\",\"destination\":\"index.html\"}],\"headers\":[{\"source\":\"**\",\"headers\":[{\"key\":\"Cache-Control\",\"value\":\"max-age=86400\"}]}]}'",
-    "prestart": "npm run build",
-    "build": "cross-env NODE_ENV=production webpack -p --progress",
-    "prebuild": "mkdirp build",
-    "test": "eslint src tests/**/*.js"
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
   },
   "keywords": [
     "preact",
@@ -17,37 +19,12 @@
   "license": "MIT",
   "author": "Jason Miller <jason@developit.ca>",
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "babel": "^6.5.2",
-    "babel-core": "^6.9.1",
-    "babel-eslint": "^6.0.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-es2015-minimal": "^2.0.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.9.0",
-    "babel-runtime": "^6.9.2",
-    "chai": "^3.5.0",
-    "core-js": "^2.4.0",
-    "cross-env": "^1.0.8",
-    "css-loader": "^0.23.1",
-    "eslint": "^2.11.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.19.0",
-    "json-loader": "^0.5.4",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "mkdirp": "^0.5.1",
-    "postcss-loader": "^0.9.1",
-    "raw-loader": "^0.5.1",
-    "source-map-loader": "^0.1.5",
-    "superstatic": "^4.0.2",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "eslint": "^4.5.0",
+    "eslint-config-synacor": "^1.1.0",
+    "if-env": "^1.0.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "preact-cli": "^2.0.0"
   },
   "dependencies": {
     "preact": "^8.1.0",
