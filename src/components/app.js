@@ -4,13 +4,11 @@ import reduce from '../reducers';
 import * as actions from '../actions';
 import TodoItem from './todo-item';
 
-@connect(reduce, { ...actions })
+@connect(reduce, actions)
 export default class App extends Component {
 	addTodos = () => {
-		const { text } = this.state;
+		this.props.addTodo(this.state.text);
 		this.setState({ text: '' });
-		this.props.addTodo(text);
-		return false;
 	};
 
 	removeTodo = (todo) => {

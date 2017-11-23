@@ -13,7 +13,7 @@ export default class TodoItem extends Component {
 	render({ todo }) {
 		return (
 			<li>
-				<button onClick={this.remove}>&times;</button>
+				<button onClick={this.remove}>×</button>
 				{ ' ' + todo.text }
 			</li>
 		);
