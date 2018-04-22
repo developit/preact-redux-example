@@ -1,10 +1,11 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
-import reduce from '../reducers';
-import * as actions from '../actions';
+import reduce from '../reducers/reducers';
+import * as actions from '../actions/todo';
 import TodoItem from './todo-item';
 
 @connect(reduce, actions)
+
 export default class App extends Component {
 	addTodos = () => {
 		this.props.addTodo(this.state.text);
