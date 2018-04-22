@@ -1,5 +1,5 @@
 import { Provider } from 'preact-redux';
-import store from './store';
+import store from './reducers/store';
 import App from './components/app';
 import './style';
 
