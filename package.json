@@ -19,16 +19,16 @@
   "license": "MIT",
   "author": "Jason Miller <jason@developit.ca>",
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-config-synacor": "^1.1.0",
-    "if-env": "^1.0.0",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
-    "preact-cli": "^2.0.0"
+    "eslint": "^5.6.1",
+    "eslint-config-synacor": "^3.0.3",
+    "if-env": "^1.0.4",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "preact-cli": "^2.2.1"
   },
   "dependencies": {
-    "preact": "^8.1.0",
-    "preact-redux": "^1.2.0",
-    "redux": "^3.6.0"
+    "preact": "^8.3.1",
+    "preact-redux": "^2.0.3",
+    "redux": "^4.0.0"
   }
 }
