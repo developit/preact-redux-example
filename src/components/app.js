@@ -7,8 +7,10 @@ import TodoItem from './todo-item';
 @connect(reduce, actions)
 export default class App extends Component {
 	addTodos = () => {
-		this.props.addTodo(this.state.text);
-		this.setState({ text: '' });
+		if (this.state.text) {
+			this.props.addTodo(this.state.text);
+			this.setState({ text: '' });
+		}
 	};
 
 	removeTodo = (todo) => {
